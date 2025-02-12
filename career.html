@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Selection - ApnaGoal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ApnaGoal</a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="text-center">Career Selector</h2>
+        <p class="text-center">Answer these questions to find your best career match!</p>
+
+        <div class="mb-3">
+            <label for="interest" class="form-label">What do you enjoy the most?</label>
+            <select class="form-select" id="interest">
+                <option value="coding">Coding & Technology</option>
+                <option value="design">Design & Creativity</option>
+                <option value="business">Business & Management</option>
+                <option value="medicine">Healthcare & Medicine</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" onclick="suggestCareer()">Find My Career</button>
+
+        <h3 class="mt-4" id="result"></h3>
+    </div>
+
+    <script>
+        function suggestCareer() {
+            let interest = document.getElementById("interest").value;
+            let result = "";
+
+            if (interest === "coding") {
+                result = "You should explore careers in Software Engineering, AI Development, or Data Science!";
+            } else if (interest === "design") {
+                result = "Consider Graphic Design, UI/UX Design, or Architecture!";
+            } else if (interest === "business") {
+                result = "Explore Business Management, Marketing, or Entrepreneurship!";
+            } else if (interest === "medicine") {
+                result = "Healthcare, Medical Research, or Psychology could be great for you!";
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+
+</body>
+</html>
